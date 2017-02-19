@@ -1,0 +1,23 @@
+$splash-welcome_text-align   : center !default; 
+$splash-welcome_margin-bottom: 48px !default; 
+
+$splash-title_font-size  : 24px !default; 
+$splash-title_font-weight: 200 !default; 
+
+$splash-sub_font-size  : 18px !default; 
+$splash-sub_font-weight: 200 !default; 
+
+.page-splash {
+  .welcome {
+    text-align   : $splash-welcome_text-align;
+    margin-bottom: $splash-welcome_margin-bottom;
+    &__title {
+      font-size  : $splash-title_font-size;
+      font-weight: $splash-title_font-weight;
+    }
+    &__sub {
+      font-size  : $splash-sub_font-size;
+      font-weight: $splash-sub_font-weight;
+    }
+  }
+}

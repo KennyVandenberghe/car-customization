@@ -1,38 +1,72 @@
 ._center {
-  text-align: center !important; }
+  text-align: center; }
 
-.login-container {
-  position: absolute;
+.button-container {
   text-align: center;
-  margin: auto;
-  top: calc(50% - 185px);
-  left: calc(50% - 185px);
-  padding: 10px;
-  width: 350px;
-  height: 350px;
-  background-color: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
-  .login-container > .switch {
-    color: #666;
-    text-decoration: underline;
-    display: block; }
-  .login-container > .mdl-button {
-    margin-top: 20px; }
+  margin-bottom: 20px; }
 
-html {
-  font-size: 18px; }
-  @media (max-width: 1400px) {
-    html {
-      font-size: 18px; } }
-  @media (max-width: 1200px) {
-    html {
-      font-size: 16px; } }
-  @media (max-width: 1024px) {
-    html {
-      font-size: 14px; } }
-  @media (max-width: 500px) {
-    html {
-      font-size: 12px; } }
+.page-splash .welcome {
+  text-align: center;
+  margin-bottom: 48px; }
+  .page-splash .welcome__title {
+    font-size: 24px;
+    font-weight: 200; }
+  .page-splash .welcome__sub {
+    font-size: 18px;
+    font-weight: 200; }
+
+.car-preview {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 400px; }
+  .car-preview__body {
+    position: relative; }
+  .car-preview__wheels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -50%; }
+    .car-preview__wheels > div {
+      display: inline-block; }
+    .car-preview__wheels > div:first-child {
+      position: absolute;
+      left: 20px; }
+    .car-preview__wheels > div:last-child {
+      position: absolute;
+      right: 20px; }
+
+.circle {
+  width: 120px;
+  height: 120px;
+  background: #7fee1d;
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  border-radius: 60px; }
+
+.pentagon {
+  width: 54px;
+  position: relative;
+  border-width: 50px 18px 0;
+  border-style: solid;
+  border-color: #277bab transparent;
+  top: 50%; }
+
+.pentagon:before {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: -85px;
+  left: -18px;
+  border-width: 0 45px 35px;
+  border-style: solid;
+  border-color: transparent transparent #277bab; }
+
+.rectangle {
+  width: 100%;
+  height: 120px;
+  background: #4da1f7; }
 
 body {
   background-color: #F5F5F5;

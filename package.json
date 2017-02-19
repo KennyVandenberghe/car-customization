@@ -1,11 +1,11 @@
 {
-  "name": "project-app",
+  "name": "car-customizer-app",
   "scripts": {
     "start": "npm run local",
-    "local": "cd app && MONGO_URL=mongodb://localhost:27017/project meteor --settings .deploy/local.json --port 3000",
-    "services": "cd services && MONGO_URL=mongodb://localhost:27017/project meteor --settings .deploy/local.json --port 3002",
-    "once": "cd once && MONGO_URL=mongodb://localhost:27017/project meteor --settings .deploy/local.json --port 3003",
-    "api": "cd api && MONGO_URL=mongodb://localhost:27017/project meteor --settings .deploy/local.json --port 3004",
+    "local": "cd app && MONGO_URL=mongodb://localhost:27017/car-customizer meteor --settings .deploy/local.json --port 3000",
+    "services": "cd services && MONGO_URL=mongodb://localhost:27017/car-customizer meteor --settings .deploy/local.json --port 3002",
+    "once": "cd once && MONGO_URL=mongodb://localhost:27017/car-customizer meteor --settings .deploy/local.json --port 3003",
+    "api": "cd api && MONGO_URL=mongodb://localhost:27017/car-customizer meteor --settings .deploy/local.json --port 3004",
     "deploy-dev": "npm run deploy-dev-app & npm run deploy-dev-api & npm run deploy-dev-once & npm run deploy-dev-services",
     "restart-dev": "npm run restart-dev-app & npm run restart-dev-api & npm run restart-dev-once & npm run restart-dev-services",
     "deploy-dev-app": "cd assets && gulp build && cd ../app/.deploy/develop && mup deploy",

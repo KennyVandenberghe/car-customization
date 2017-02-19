@@ -1,4 +1,4 @@
-Project = {
+CarCustomizer = {
   Validators: {},
   Schemas: {},
   Namespaces: {},

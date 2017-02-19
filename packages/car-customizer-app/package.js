@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'project-core',
+  name: 'car-customizer-app',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -11,32 +11,18 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.1.0.2');
-  var c = 'client',
+  api.versionsFrom('1.2.1');
+  const c = 'client',
       s = 'server',
       cs = [c, s];
 
-  api.use([
+
+//First load Rvn namespace, then app-ui
+  api.imply([
     'ui',
     'templating',
-    'iron:router',
-    'session'
-  ], c);
-
-  api.addFiles([
-    'namespace.js',
-    'validators.js'
-  ], cs);
-
-  api.addFiles([
-    'layout.html',
-    'layout.js',
-    'head.html'
-  ], c);
-
-  api.addFiles([
-    'router.js'
-  ], c);
-
-  api.export('Project');
+    'car-customizer-core',
+    'car-customizer-app-ui',
+    'car-customizer'
+  ]);
 });

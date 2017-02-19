@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'project-app-ui',
+  name: 'car-customizer-app-ui',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
-  var c = 'client',
+  const c = 'client',
       s = 'server',
       cs = [c, s];
 
@@ -22,12 +22,12 @@ Package.onUse(function(api) {
   ], c);
 
   api.use([
-    'project-core'
+    'car-customizer-core'
   ], cs);
 
   api.addFiles([
     'client.js'
   ], c);
 
-  api.export('Project');
+  api.export('CarCustomizer');
 });
