@@ -15,58 +15,71 @@
     font-size: 18px;
     font-weight: 200; }
 
-.car-preview {
+.page-customizer .car-preview {
   margin-left: auto;
   margin-right: auto;
   position: relative;
   width: 400px; }
-  .car-preview__body {
+  .page-customizer .car-preview__body {
     position: relative; }
-  .car-preview__wheels {
+  .page-customizer .car-preview__wheels {
     position: absolute;
     width: 100%;
     height: 100%;
     bottom: -50%; }
-    .car-preview__wheels > div {
+    .page-customizer .car-preview__wheels > div {
       display: inline-block; }
-    .car-preview__wheels > div:first-child {
+    .page-customizer .car-preview__wheels > div:first-child {
       position: absolute;
       left: 20px; }
-    .car-preview__wheels > div:last-child {
+    .page-customizer .car-preview__wheels > div:last-child {
       position: absolute;
       right: 20px; }
 
-.circle {
+.page-customizer .car-options .car-body__title {
+  font-size: 24px;
+  font-weight: 200; }
+
+.page-customizer .car-options .car-wheels__title {
+  font-size: 24px;
+  font-weight: 200; }
+
+.car-preview__wheels .circle {
   width: 120px;
   height: 120px;
-  background: #7fee1d;
   -moz-border-radius: 60px;
   -webkit-border-radius: 60px;
   border-radius: 60px; }
 
-.pentagon {
-  width: 54px;
-  position: relative;
-  border-width: 50px 18px 0;
-  border-style: solid;
-  border-color: #277bab transparent;
-  top: 50%; }
+.car-preview__wheels .oval {
+  width: 160px;
+  height: 120px;
+  -webkit-border-radius: 100px / 50px;
+  -moz-border-radius: 100px / 50px;
+  border-radius: 100px / 50px; }
 
-.pentagon:before {
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-  top: -85px;
-  left: -18px;
-  border-width: 0 45px 35px;
-  border-style: solid;
-  border-color: transparent transparent #277bab; }
+.car-preview__wheels .square {
+  width: 120px;
+  height: 120px; }
 
-.rectangle {
+.car-preview__body .rectangle {
+  width: 100%;
+  height: 120px; }
+
+.car-preview__body .parallelogram {
   width: 100%;
   height: 120px;
-  background: #4da1f7; }
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
+  transform: skew(30deg); }
+
+.car-preview__body .oval {
+  width: 100%;
+  height: 120px;
+  -webkit-border-radius: 100px / 50px;
+  -moz-border-radius: 100px / 50px;
+  border-radius: 100px / 50px; }
 
 body {
   background-color: #F5F5F5;

@@ -1,5 +1,36 @@
-.rectangle {
-  width: 100%;
-  height: 120px;
-  background: #4da1f7;    
+$car-body_width : 100% !default;
+$car-body_height: 120px !default;
+
+$car-body-rectangle_width : $car-body_width;
+$car-body-rectangle_height: $car-body_height;
+
+$car-body-parallelogram_width    : $car-body_width;
+$car-body-parallelogram_height   : $car-body_height;
+$car-body-parallelogram_transform: skew(30deg) !default;
+
+$car-body-oval_width: $car-body_width;
+$car-body-oval_height: $car-body_height;
+
+.car-preview__body {
+  .rectangle {
+    width : $car-body-rectangle_width;
+    height: $car-body-rectangle_height;
+  }
+
+  .parallelogram {
+    width            : $car-body-parallelogram_width;
+    height           : $car-body-parallelogram_height;
+    -webkit-transform: $car-body-parallelogram_transform;
+    -moz-transform   : $car-body-parallelogram_transform;
+    -o-transform     : $car-body-parallelogram_transform;
+    transform        : $car-body-parallelogram_transform;
+  }
+
+  .oval {
+    width                : $car-body-oval_width;
+    height               : $car-body-oval_height;
+    -webkit-border-radius: 100px / 50px;
+    -moz-border-radius   : 100px / 50px;
+    border-radius        : 100px / 50px;
+  }
 }

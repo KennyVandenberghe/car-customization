@@ -17,16 +17,16 @@ Package.onUse(function(api) {
       cs = [c, s];
 
   api.use([
-    'mongo'
-  ], cs);
-
-  api.use([
     'car-customizer-core',
+    'mongo',
     'underscore',
-    'momentjs:moment',
     'dburles:collection-helpers@1.0.2',
     'sewdn:collection-behaviours@0.2.0'
   ], cs);
+
+  api.use([
+    'reactive-var'
+  ], c);
 
   api.use([
     'ui',
@@ -40,6 +40,8 @@ Package.onUse(function(api) {
     'components/carCustomizer.html',
     'components/carCustomizer.js',
     'components/carsList.html',
-    'components/carsList.js'
+    'components/carsList.js',
+    'components/carOptions.html',
+    'components/carOptions.js'
   ], c);
 });

@@ -1,29 +1,36 @@
-.circle {
-  width: 120px;
-  height: 120px;
-  background: #7fee1d;
-  -moz-border-radius: 60px;
-  -webkit-border-radius: 60px;
-  border-radius: 60px;
-}
+$car-wheels_width : 120px !default;
+$car-wheels_height: 120px !default;
 
-.pentagon {
-    width: 54px;
-    position: relative;
-    border-width: 50px 18px 0;
-    border-style: solid;
-    border-color: #277bab transparent;
-    top: 50%;
-}
+$car-wheels-circle_width        : $car-wheels_width;
+$car-wheels-circle_height       : $car-wheels_height;
+$car-wheels-circle_border-radius: 60px !default;
 
-.pentagon:before {
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: -85px;
-    left: -18px;
-    border-width: 0 45px 35px;
-    border-style: solid;
-    border-color: transparent transparent #277bab;
+$car-wheels-oval_width : 160px !default;
+$car-wheels-oval_height: $car-wheels_height;
+
+$car-wheels-square_width : $car-wheels_width;
+$car-wheels-square_height: $car-wheels_height;
+
+
+.car-preview__wheels {
+  .circle {
+    width                : $car-wheels-circle_width;
+    height               : $car-wheels-circle_height;
+    -moz-border-radius   : $car-wheels-circle_border-radius;
+    -webkit-border-radius: $car-wheels-circle_border-radius;
+    border-radius        : $car-wheels-circle_border-radius;
+  }
+
+  .oval {
+    width                : $car-wheels-oval_width;
+    height               : $car-wheels-oval_height;
+    -webkit-border-radius: 100px / 50px;
+    -moz-border-radius   : 100px / 50px;
+    border-radius        : 100px / 50px;
+  }
+
+  .square {
+    width : $car-wheels-square_width;
+    height: $car-wheels-square_height;
+  }
 }

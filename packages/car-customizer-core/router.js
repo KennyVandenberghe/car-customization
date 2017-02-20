@@ -4,7 +4,7 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/new', {
+FlowRouter.route('/new/:carId', {
   action(params) {
    BlazeLayout.render('appLayout', {main: 'carCustomizer'}); 
   }

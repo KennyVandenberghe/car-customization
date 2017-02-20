@@ -17,15 +17,25 @@ Package.onUse(function(api) {
       cs = [c, s];
 
   api.use([
+    'mongo',
+    'underscore',
+    'dburles:collection-helpers@1.0.3',
+    'ecmascript'
+  ], cs);
+
+  api.use([
     'ui',
     'templating',
     'kadira:blaze-layout',
     'kadira:flow-router',
-    'session'
+    'reactive-var'
   ], c);
 
   api.addFiles([
     'namespace.js',
+    'namespaces/car.js',
+    'models/cars.js',
+    'methods/cars.js',
     'validators.js'
   ], cs);
 
@@ -39,5 +49,5 @@ Package.onUse(function(api) {
     'router.js'
   ], c);
 
-  api.export('CarCustomizer');
+  api.export('CarCustomizer', cs);
 });
