@@ -15,34 +15,67 @@
     font-size: 18px;
     font-weight: 200; }
 
-.page-customizer .car-preview {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  width: 400px; }
-  .page-customizer .car-preview__body {
-    position: relative; }
-  .page-customizer .car-preview__wheels {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: -50%; }
-    .page-customizer .car-preview__wheels > div {
-      display: inline-block; }
-    .page-customizer .car-preview__wheels > div:first-child {
-      position: absolute;
-      left: 20px; }
-    .page-customizer .car-preview__wheels > div:last-child {
-      position: absolute;
-      right: 20px; }
-
-.page-customizer .car-options .car-body__title {
+.car-options .car-name__title, .car-options .car-body__title, .car-options .car-wheels__title {
+  color: #3F51B5;
   font-size: 24px;
-  font-weight: 200; }
+  font-weight: 200;
+  margin-bottom: 24px; }
 
-.page-customizer .car-options .car-wheels__title {
-  font-size: 24px;
-  font-weight: 200; }
+.car {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 24px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .car .car-name {
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+    color: #999999; }
+  .car .car-container {
+    height: 200px;
+    padding: 30px; }
+    .car .car-container .car-preview {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      max-width: 400px; }
+      .car .car-container .car-preview__body {
+        position: relative; }
+      .car .car-container .car-preview__wheels {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -50%; }
+        .car .car-container .car-preview__wheels > div {
+          display: inline-block; }
+        .car .car-container .car-preview__wheels > div:first-child {
+          position: absolute;
+          left: 20px; }
+        .car .car-container .car-preview__wheels > div:last-child {
+          position: absolute;
+          right: 20px; }
+  .car .car-actions {
+    margin-top: 24px;
+    border-top: 1px solid #eeeeee;
+    padding: 16px;
+    text-align: right; }
+    .car .car-actions button {
+      color: #999999; }
+    .car .car-actions button:first-child {
+      margin-right: 12px; }
+
+.car-options {
+  margin-top: 16px; }
+  .car-options .car-name {
+    margin-bottom: 24px; }
+  .car-options .car-body {
+    margin-bottom: 24px; }
+  .car-options .car-wheels {
+    margin-bottom: 24px; }
 
 .car-preview__wheels .circle {
   width: 120px;
@@ -81,13 +114,48 @@
   -moz-border-radius: 100px / 50px;
   border-radius: 100px / 50px; }
 
+.option-block {
+  display: inline-block;
+  border-radius: 3px;
+  margin: 10px 10px 10px 0;
+  width: 30px;
+  height: 30px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .option-block__inner {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%; }
+    .option-block__inner.-number {
+      font-size: 18px;
+      font-weight: 500;
+      color: #606060; }
+
+html {
+  font-size: 18px; }
+  @media (max-width: 1400px) {
+    html {
+      font-size: 18px; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 16px; } }
+  @media (max-width: 1024px) {
+    html {
+      font-size: 14px; } }
+  @media (max-width: 500px) {
+    html {
+      font-size: 12px; } }
+
 body {
   background-color: #F5F5F5;
-  color: #000; }
-
-a {
-  text-decoration: none;
-  color: #666; }
+  color: #212121; }
 
 .page {
   max-width: 1024px;

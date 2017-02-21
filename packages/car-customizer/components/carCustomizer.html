@@ -1,16 +1,17 @@
 <template name="carCustomizer">
   <div class="page-customizer">
     {{#with car}}
-      <div class="car-preview">
-        <div class="car-preview__body">
-          <div style="background: {{this.body.color}};" class="{{this.body.type}}"></div>
-        </div>
-        <div class="car-preview__wheels">
-          <div style="background: {{this.wheels.color}};" class="{{this.wheels.type}}"></div>
-          <div style="background: {{this.wheels.color}};" class="{{this.wheels.type}}"></div>
-        </div>
+    <div class="car">
+        {{> carPreview car=this}}
       </div>
       <div class="car-options">
+        <div class="car-name">
+          <div class="car-name__title">Car Name</div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="name" value={{name}}>
+            <label class="mdl-textfield__label name" for="name">Car name...</label>
+          </div>
+        </div>
         <div class="car-body">
           <div class="car-body__title">Car Body</div>
           <div class="car-body__parts">

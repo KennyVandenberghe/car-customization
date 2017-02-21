@@ -2,6 +2,12 @@ Meteor.methods({
   'carcustomizer.car.create'(car){
     return CarCustomizer.Car.create(car);
   },
+  'carcustomizer.car.remove'(car){
+    return CarCustomizer.Car.remove(car);
+  },
+  'carcustomizer.car.update.name'(id, name){
+    return CarCustomizer.Car.updateName(id, name);
+  },
   'carcustomizer.car.body.update.type'(id, type){
     return CarCustomizer.Car.updateBodyType(id, type);
   },

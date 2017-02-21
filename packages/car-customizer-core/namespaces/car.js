@@ -12,6 +12,18 @@ _.extend(CarCustomizer.Car, {
     
     return CarCustomizer.Cars.insert(car);
   },
+  remove: function(carId) {
+    return CarCustomizer.Cars.remove(carId);
+  },
+  updateName: function(_id, name) {
+    CarCustomizer.Cars.update({
+      _id: _id
+    }, {
+      $set: {
+        name
+      }
+    });
+  },
   updateBodyType: function(_id, type) {
     CarCustomizer.Cars.update({
       _id: _id

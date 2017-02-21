@@ -1,13 +1,21 @@
 <template name="carOptions">
   {{#each getItems}}
     {{#unless isColor}}
-      <div class="option-block {{#if isSelected}}-selected{{/if}}" data-action="{{getAction}}">
-        {{this}}
-      </div>
+      {{> optionBlock isSelected=isSelected action=getAction type=this name=getName index=@index}}
     {{else}}
-      <div class="option-block {{#if isSelected}}-selected{{/if}}" data-action="{{getAction}}">
-        {{this}}
-      </div>
+      {{> optionBlock isSelected=isSelected action=getAction color=this name=getName}}
     {{/unless}}
   {{/each}}
+</template>
+
+<template name="optionBlock">
+  <div class="option-block {{#if isSelected}}-selected{{/if}}" data-name="{{name}}" data-action="{{action}}">
+    {{#if color}}
+      <div class="option-block__inner" style="background-color: {{color}};"></div>
+    {{else}}
+      <div class="option-block__inner -number">
+        <span>{{index}}</span>
+      </div>
+    {{/if}}
+  </div>
 </template>

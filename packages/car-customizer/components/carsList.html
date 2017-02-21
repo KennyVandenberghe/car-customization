@@ -1,3 +1,36 @@
 <template name="carsList">
-  carslist
+  {{#each cars}}
+    {{> carPreview car=this options=true}}
+  {{/each}}
+</template>
+
+<template name="carPreview">
+  {{#with car}}
+    <div class="car">
+      <div class="car-container">
+        <div class="car-name">
+         {{getName}} 
+        </div>
+        <div class="car-preview">
+          <div class="car-preview__body">
+            <div style="background: {{getBodyColor}};" class="{{getBodyType}}"></div>
+          </div>
+          <div class="car-preview__wheels">
+            <div style="background: {{getWheelsColor}};" class="{{getWheelsType}}"></div>
+            <div style="background: {{getWheelsColor}};" class="{{getWheelsType}}"></div>
+          </div>
+        </div>  
+      </div>
+      {{#if ../options}}
+        <div class="car-actions">
+          <button class="car-actions__edit js-edit mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">edit</i>
+          </button>
+          <button class="car-actions__remove js-remove mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">delete</i>
+          </button>
+        </div>
+      {{/if}}
+    </div>
+  {{/with}}
 </template>

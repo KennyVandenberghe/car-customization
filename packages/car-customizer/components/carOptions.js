@@ -3,6 +3,7 @@ carOptions = class {
     this.options = options;
     this.items = new ReactiveVar(this.options.items);
     this.type = new ReactiveVar(this.options.type);
+    this.name = new ReactiveVar(this.options.name);
     this.action = new ReactiveVar(this.options.action);
     this.selectedItem = new ReactiveVar();
   }
@@ -17,6 +18,9 @@ carOptions = class {
   }
   getType() {
     return this.type.get();
+  }
+  getName() {
+    return this.name.get(); 
   }
   getSelectedItem() {
     return this.selectedItem.get();
@@ -35,16 +39,26 @@ Template.carOptions.onCreated(function() {
 });
 
 Template.carOptions.helpers({
-  getItems: function() {
+  getItems() {
     return Template.instance().optionBlocks.getItems();
   },
-  getAction: function() {
+  getAction() {
     return Template.instance().optionBlocks.getAction();
   },
-  isSelected: function() {
+  getName() {
+    return Template.instance().optionBlocks.getName();
+  },
+  isSelected() {
     return Template.instance().optionBlocks.getSelectedItem();
   },
-  isColor: function() {
+  isColor() {
     return Template.instance().optionBlocks.getType() === 'color';
+  }
+});
+
+Template.carOptions.events({
+  'click .option-block': function (e, tpl) {
+    const prop = !! this.color ? 'color' : 'type';
+    tpl.optionBlocks.setSelectedItem(this[prop]);
   }
 });

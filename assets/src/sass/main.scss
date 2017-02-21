@@ -5,7 +5,7 @@
 
 @import "helpers/helpers";
 
-//@import "mixins/overlay";
+@import "mixins/shadow";
 //Rvn-lib
 //@import "components/mdl/actionPicker";
 //@import "components/overlay";
@@ -16,29 +16,27 @@
 //@import "components/layout-mask";
 
 @import "components/pages/splash";
-@import "components/pages/customizer";
+@import "components/pages/car";
 @import "components/carParts/wheels";
 @import "components/carParts/body";
+@import "components/carOptions/optionBlocks";
 //@import "components/pages/session-list";
 
 //@import "components/mdl/card";
 
-// html {
-//   font-size: 18px;
-//   @media (max-width: 1400px) { font-size: 18px; }
-//   @media (max-width: 1200px) { font-size: 16px; }
-//   @media (max-width: 1024px) { font-size: 14px; }
-//   @media (max-width: 500px) { font-size: 12px; }
-// }
+html {
+  font-size: 18px;
+  @media (max-width: 1400px) { font-size: 18px; }
+  @media (max-width: 1200px) { font-size: 16px; }
+  @media (max-width: 1024px) { font-size: 14px; }
+  @media (max-width: 500px) { font-size: 12px; }
+}
 
 body {
-  background-color: #F5F5F5;
+  background-color: $background;
   color: $black;
 }
-a {
-  text-decoration: none;
-  color: $color-links;
-}
+
 .page {
   max-width: 1024px;
   margin-left: auto;
