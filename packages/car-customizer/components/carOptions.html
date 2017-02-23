@@ -1,21 +1,50 @@
 <template name="carOptions">
-  {{#each getItems}}
-    {{#unless isColor}}
-      {{> optionBlock isSelected=isSelected action=getAction type=this name=getName index=@index}}
-    {{else}}
-      {{> optionBlock isSelected=isSelected action=getAction color=this name=getName}}
-    {{/unless}}
-  {{/each}}
-</template>
-
-<template name="optionBlock">
-  <div class="option-block {{#if isSelected}}-selected{{/if}}" data-name="{{name}}" data-action="{{action}}">
-    {{#if color}}
-      <div class="option-block__inner" style="background-color: {{color}};"></div>
-    {{else}}
-      <div class="option-block__inner -number">
-        <span>{{index}}</span>
+  <div class="car-options">
+    <div class="car-name">
+      <div class="car-name__title">Car Name</div>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="name" value={{car.name}}>
+        <label class="mdl-textfield__label name" for="name">Car name...</label>
       </div>
-    {{/if}}
+    </div>
+    <div class="car-body">
+      <div class="car-body__title">Car Body</div>
+      <div class="car-body__parts">
+        {{> carOptionBlocks bodyTypeContext}}
+      </div>
+      <div class="car-body__colors">
+        {{> carOptionBlocks bodyColorContext}}
+      </div>
+    </div>
+    <div class="car-wheels">
+      <div class="car-wheels__title">Car Wheels</div>
+      <div class="car-wheels__parts">
+        {{> carOptionBlocks wheelsTypeContext}}
+      </div>
+      <div class="car-wheels__colors">
+        {{> carOptionBlocks wheelsColorContext}}
+      </div>
+    </div>
+    <div class="car-brands">
+      <div class="car-brands__title">Car Brand</div>
+      <div class="brands-container">
+        {{#each carBrands}}
+          <div class="brand-info">
+            {{#if isSelected}}
+              <div class="selected-state">
+                <i class="material-icons">check</i>
+              </div>
+            {{/if}}
+            <div class="brand-logo">
+              <img src="{{this.logoUrl}}" />
+            </div>
+            <div class="brand-name">
+              {{this.make}}
+            </div>
+            <!-- {{> carOptionBlocks wheelsTypeContext}} -->
+          </div>
+        {{/each}}
+      </div>
+    </div>
   </div>
 </template>

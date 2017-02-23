@@ -16,12 +16,11 @@ Package.onUse(function(api) {
       s = 'server',
       cs = [c, s];
 
-
-//First load Rvn namespace, then app-ui
   api.imply([
     'ui',
     'templating',
     'car-customizer-core',
+    'car-customizer-api',
     'car-customizer-app-ui',
     'car-customizer'
   ]);

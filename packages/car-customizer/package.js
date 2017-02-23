@@ -42,6 +42,8 @@ Package.onUse(function(api) {
     'components/carsList.html',
     'components/carsList.js',
     'components/carOptions.html',
-    'components/carOptions.js'
+    'components/carOptions.js',
+    'components/carOptionBlocks.html',
+    'components/carOptionBlocks.js'
   ], c);
 });

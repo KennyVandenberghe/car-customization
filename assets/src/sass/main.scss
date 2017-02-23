@@ -3,26 +3,19 @@
 @import "config/colors";
 @import "modules/**/*";
 
-@import "helpers/helpers";
-
 @import "mixins/shadow";
-//Rvn-lib
-//@import "components/mdl/actionPicker";
-//@import "components/overlay";
 
 //app level
-//@import "components/list";
 @import "components/buttons";
-//@import "components/layout-mask";
 
 @import "components/pages/splash";
 @import "components/pages/car";
+@import "components/pages/car-options";
+
 @import "components/carParts/wheels";
 @import "components/carParts/body";
-@import "components/carOptions/optionBlocks";
-//@import "components/pages/session-list";
 
-//@import "components/mdl/card";
+@import "components/carOptions/option-blocks";
 
 html {
   font-size: 18px;
@@ -43,6 +36,4 @@ body {
   margin-right: auto;
   padding: 24px 24px 0 24px;
 }
-.mdl-layout__header {
-  z-index: 1;
-}
+

@@ -1,16 +1,29 @@
+$mobile-width: 676px !default;
+
 $car-wheels_width : 120px !default;
 $car-wheels_height: 120px !default;
+
+$car-wheels-mobile_width : 80px !default;
+$car-wheels-mobile_height: 80px !default;
 
 $car-wheels-circle_width        : $car-wheels_width;
 $car-wheels-circle_height       : $car-wheels_height;
 $car-wheels-circle_border-radius: 60px !default;
 
+$car-wheels-circle-mobile_width : $car-wheels-mobile_width;
+$car-wheels-circle-mobile_height: $car-wheels-mobile_height;
+
 $car-wheels-oval_width : 160px !default;
 $car-wheels-oval_height: $car-wheels_height;
+
+$car-wheels-oval-mobile_width : 120px !default;
+$car-wheels-oval-mobile_height: $car-wheels-mobile_height;
 
 $car-wheels-square_width : $car-wheels_width;
 $car-wheels-square_height: $car-wheels_height;
 
+$car-wheels-square-mobile_width : $car-wheels-mobile_width;
+$car-wheels-square-mobile_height: $car-wheels-mobile_height;
 
 .car-preview__wheels {
   .circle {
@@ -19,6 +32,10 @@ $car-wheels-square_height: $car-wheels_height;
     -moz-border-radius   : $car-wheels-circle_border-radius;
     -webkit-border-radius: $car-wheels-circle_border-radius;
     border-radius        : $car-wheels-circle_border-radius;
+    @media (max-width: $mobile-width) {
+      width : $car-wheels-circle-mobile_width;
+      height: $car-wheels-circle-mobile_height;
+    }
   }
 
   .oval {
@@ -27,10 +44,18 @@ $car-wheels-square_height: $car-wheels_height;
     -webkit-border-radius: 100px / 50px;
     -moz-border-radius   : 100px / 50px;
     border-radius        : 100px / 50px;
+    @media (max-width: $mobile-width) {
+      width : $car-wheels-oval-mobile_width;
+      height: $car-wheels-oval-mobile_height;
+    }
   }
 
   .square {
     width : $car-wheels-square_width;
     height: $car-wheels-square_height;
+    @media (max-width: $mobile-width) {
+      width : $car-wheels-square-mobile_width;
+      height: $car-wheels-square-mobile_height;
+    }
   }
 }

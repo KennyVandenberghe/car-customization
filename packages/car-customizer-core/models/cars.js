@@ -24,6 +24,9 @@ Cars.helpers(_.extend({}, {
   getName() {
     return this.name;
   },
+  getBrand() {
+    return this.brand;
+  },
   getBodyType() {
     return this.body.type;
   },

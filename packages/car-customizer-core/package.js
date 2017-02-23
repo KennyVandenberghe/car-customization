@@ -36,6 +36,7 @@ Package.onUse(function(api) {
     'namespaces/car.js',
     'models/cars.js',
     'methods/cars.js',
+    'methods/carBrands.js',
     'validators.js'
   ], cs);
 

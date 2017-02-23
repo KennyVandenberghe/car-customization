@@ -1,4 +1,7 @@
+$button-container_text-align   : center !default;
+$button-container_margin-bottom: 20px !default;
+
 .button-container {
-  text-align: center;
-  margin-bottom: 20px;
+  text-align   : $button-container_text-align;
+  margin-bottom: $button-container_margin-bottom;
 }

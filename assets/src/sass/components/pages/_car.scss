@@ -1,11 +1,6 @@
-%title {
-  color: $main-blue;
-  font-size: 24px;
-  font-weight: 200;
-  margin-bottom: 24px;
-}
 .car {
-  max-width: 500px;
+  max-width: 680px;
+  height: 320px;
   margin: auto;
   margin-bottom: 24px;
   background-color: #ffffff;
@@ -27,6 +22,17 @@
       max-width: 400px;
       &__body {
         position: relative;
+        .body-brand {
+          position: absolute;
+          text-align: center;
+          z-index: 1;
+          top: 16px;
+          width: 100%;
+          height: 50px;
+          img {
+            height: 100%;
+          }
+        }
       }
       &__wheels {
         position: absolute;
@@ -48,7 +54,6 @@
     }
   }
   .car-actions {
-    margin-top: 24px;
     border-top: 1px solid #eeeeee;
     padding: 16px;
     text-align: right;
@@ -57,27 +62,6 @@
     }
     button:first-child {
       margin-right: 12px;
-    }
-  }
-}
-.car-options {
-  margin-top: 16px;
-  .car-name {
-    margin-bottom: 24px;
-    &__title {
-      @extend %title;
-    }
-  }
-  .car-body {
-    margin-bottom: 24px;
-    &__title {
-      @extend %title;
-    }
-  }
-  .car-wheels {
-    margin-bottom: 24px;
-    &__title {
-      @extend %title;
     }
   }
 }

@@ -1,0 +1,82 @@
+%title {
+  color: $main-blue;
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 24px;
+}
+
+.car-options {
+  max-width: 680px;
+  margin: auto;
+  margin-top: 16px;
+  .car-name {
+    margin-bottom: 24px;
+    &__title {
+      @extend %title;
+    }
+  }
+  .car-body {
+    margin-bottom: 24px;
+    &__title {
+      @extend %title;
+    }
+  }
+  .car-wheels {
+    margin-bottom: 24px;
+    &__title {
+      @extend %title;
+    }
+  }
+  .car-brands {
+    margin-bottom: 24px;
+    &__title {
+      @extend %title;
+    }
+    .brands-container {
+      @include display-flex();
+      @include justify-content(space-between);
+      @media(max-width: 676px) {
+        @include flex-direction(column);
+      }
+      .brand-info {
+        @include display-flex();
+        @include flex(0 200px);
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+        @include shadow;
+        position: relative;
+        height: 200px;
+        background-color: #ffffff;
+        @media(max-width: 676px) {
+          margin-bottom: 16px;
+        }
+        .selected-state {
+          width: 30px;
+          height: 30px;
+          background-color: $main-blue;
+          border-radius: 50%;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          i {
+            position: absolute;
+            top: calc(50% - 12px);
+            color: white;
+            left: calc(50% - 12px);
+          }
+        }
+        .brand-logo {
+          margin-bottom: 10px;
+          img {
+            max-height: 100px;
+          }
+        }
+        .brand-name {
+          font-size: 18px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

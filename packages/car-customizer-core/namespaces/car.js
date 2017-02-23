@@ -24,6 +24,15 @@ _.extend(CarCustomizer.Car, {
       }
     });
   },
+  updateBrand: function(_id, brand) {
+    CarCustomizer.Cars.update({
+      _id: _id
+    }, {
+      $set: {
+        brand
+      }
+    });
+  },
   updateBodyType: function(_id, type) {
     CarCustomizer.Cars.update({
       _id: _id

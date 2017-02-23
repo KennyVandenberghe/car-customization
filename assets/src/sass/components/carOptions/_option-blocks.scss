@@ -6,6 +6,9 @@ $option-block_margin       : 10px 10px 10px 0 !default;
 $option-block_width        : 30px !default;
 $option-block_height       : 30px !default;
 
+$option-block-selected_border-radius: 5px !default;
+$option-block-selected_border       : 2px solid $main-blue !default;
+
 $option-block-inner_width        : 100% !default;
 $option-block-inner_height       : 100% !default;
 $option-block-inner_border-radius: $border-radius;
@@ -21,6 +24,10 @@ $option-block-inner-number_color      : #606060 !default;
   width        : $option-block_width;
   height       : $option-block_height;
   @include shadow;
+  &.-selected {
+    border-radius: $option-block-selected_border-radius;
+    border       : $option-block-selected_border;
+  }
   &__inner {
     @include display-flex();
     @include justify-content(center);
