@@ -1,4 +1,11 @@
 $background: #F5F5F5;
-$black: #212121;
 
 $main-blue: #3F51B5;
+
+$color-white    : #ffffff;
+$color-black    : #212121;
+$color-gray     : #eeeeee;
+$color-gray-dark: darken($color-gray, 20%);
+
+$color-divider    : $color-gray;
+$color-icon-button: $color-gray-dark;

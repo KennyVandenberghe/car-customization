@@ -1,14 +1,18 @@
+$mobile-width: 676px !default;
+
 $car-body_width : 100% !default;
 $car-body_height: 120px !default;
 
 $car-body-rectangle_width : $car-body_width;
 $car-body-rectangle_height: $car-body_height;
 
-$car-body-parallelogram_width    : $car-body_width;
-$car-body-parallelogram_height   : $car-body_height;
-$car-body-parallelogram_transform: skew(30deg) !default;
+$car-body-parallelogram_width        : $car-body_width;
+$car-body-parallelogram_height       : $car-body_height;
+$car-body-parallelogram_transform    : skew(30deg) !default;
+$car-body-parallelogram-mobile_width : 90% !default;
+$car-body-parallelogram-mobile_margin: auto !default;
 
-$car-body-oval_width: $car-body_width;
+$car-body-oval_width : $car-body_width;
 $car-body-oval_height: $car-body_height;
 
 .car-preview__body {
@@ -24,6 +28,10 @@ $car-body-oval_height: $car-body_height;
     -moz-transform   : $car-body-parallelogram_transform;
     -o-transform     : $car-body-parallelogram_transform;
     transform        : $car-body-parallelogram_transform;
+    @media (max-width: $mobile-width) {
+      width : $car-body-parallelogram-mobile_width;
+      margin: $car-body-parallelogram-mobile_margin;
+    }
   }
 
   .oval {

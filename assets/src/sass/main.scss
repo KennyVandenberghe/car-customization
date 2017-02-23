@@ -1,16 +1,17 @@
 @import "compass";
 
 @import "config/colors";
-@import "modules/**/*";
 
 @import "mixins/shadow";
 
 //app level
 @import "components/buttons";
 
+@import "components/pages/page";
 @import "components/pages/splash";
 @import "components/pages/car";
 @import "components/pages/car-options";
+@import "components/pages/car-actions";
 
 @import "components/carParts/wheels";
 @import "components/carParts/body";
@@ -27,13 +28,5 @@ html {
 
 body {
   background-color: $background;
-  color: $black;
+  color           : $color-black;
 }
-
-.page {
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 24px 24px 0 24px;
-}
-

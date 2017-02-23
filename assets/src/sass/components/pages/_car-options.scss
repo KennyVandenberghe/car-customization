@@ -1,41 +1,75 @@
+$mobile-width: 676px !default;
+
+$title_color        : $main-blue !default;
+$title_font-size    : 24px !default;
+$title_font-weight  : 200 !default;
+$title_margin-bottom: 24px !default;
+
+$car-options_max-width          : 680px !default
+$car-options_margin             : auto 16px 16px 16px !default
+$car-options-child_margin-bottom: 24px !default;
+
+$brand-info_position            : relative !default;
+$brand-info_height              : 200px !default;
+$brand-info_background-color    : $color-white !default;
+$brand-info-mobile_margin-bottom: 16px !default;
+
+$brand-info-selected_position        : absolute !default;
+$brand-info-selected_top             : 10px !default;
+$brand-info-selected_right           : 10px !default;
+$brand-info-selected_width           : 30px !default;
+$brand-info-selected_height          : 30px !default;
+$brand-info-selected_background-color: $main-blue !default;
+$brand-info-selected_border-radius   : 50% !default;
+
+$brand-info-selected-icon_position: absolute !default;
+$brand-info-selected-icon_top     : calc(50% - 12px) !default;
+$brand-info-selected-icon_left    : calc(50% - 12px) !default;
+$brand-info-selected-icon_color   : $color-white !default;
+
+$brand-logo_margin-bottom : 10px !default;
+$brand-logo-img_max-height: 100px !default;
+
+$brand-name_font-size      : 18px !default;
+$brand-name_font-weight: 300 !default;
+
 %title {
-  color: $main-blue;
-  font-size: 24px;
-  font-weight: 200;
-  margin-bottom: 24px;
+  color        : $title_color;
+  font-size    : $title_font-size;
+  font-weight  : $title_font-weight;
+  margin-bottom: $title_margin-bottom;
 }
 
 .car-options {
-  max-width: 680px;
-  margin: auto;
-  margin-top: 16px;
+  max-width: $car-options_max-width;
+  margin   : $car-options_margin;
   .car-name {
-    margin-bottom: 24px;
+    margin-bottom: $car-options-child_margin-bottom;
     &__title {
       @extend %title;
     }
   }
   .car-body {
-    margin-bottom: 24px;
+    margin-bottom: $car-options-child_margin-bottom;
     &__title {
       @extend %title;
     }
   }
   .car-wheels {
-    margin-bottom: 24px;
+    margin-bottom: $car-options-child_margin-bottom;
     &__title {
       @extend %title;
     }
   }
   .car-brands {
-    margin-bottom: 24px;
+    margin-bottom: $car-options-child_margin-bottom;
     &__title {
       @extend %title;
     }
     .brands-container {
       @include display-flex();
       @include justify-content(space-between);
-      @media(max-width: 676px) {
+      @media(max-width: $mobile-width) {
         @include flex-direction(column);
       }
       .brand-info {
@@ -45,36 +79,36 @@
         @include justify-content(center);
         @include align-items(center);
         @include shadow;
-        position: relative;
-        height: 200px;
-        background-color: #ffffff;
-        @media(max-width: 676px) {
-          margin-bottom: 16px;
+        position        : $brand-info_position;
+        height          : $brand-info_height;
+        background-color: $brand-info_background-color;
+        @media(max-width: $mobile-width) {
+          margin-bottom: $brand-info-mobile_margin-bottom;
         }
         .selected-state {
-          width: 30px;
-          height: 30px;
-          background-color: $main-blue;
-          border-radius: 50%;
-          position: absolute;
-          top: 10px;
-          right: 10px;
+          position        : $brand-info-selected_position;
+          top             : $brand-info-selected_top;
+          right           : $brand-info-selected_right;
+          width           : $brand-info-selected_width;
+          height          : $brand-info-selected_height;
+          background-color: $brand-info-selected_background-color;
+          border-radius   : $brand-info-selected_border-radius;
           i {
-            position: absolute;
-            top: calc(50% - 12px);
-            color: white;
-            left: calc(50% - 12px);
+            position: $brand-info-selected-icon_position;
+            top     : $brand-info-selected-icon_top;
+            left    : $brand-info-selected-icon_left;
+            color   : $brand-info-selected-icon_color;
           }
         }
         .brand-logo {
-          margin-bottom: 10px;
+          margin-bottom: $brand-logo_margin-bottom;
           img {
-            max-height: 100px;
+            max-height: $brand-logo-img_max-height;
           }
         }
         .brand-name {
-          font-size: 18px;
-          font-weight: 300;
+          font-size  : $brand-name_font-size;
+          font-weight: $brand-name_font-weight;
         }
       }
     }

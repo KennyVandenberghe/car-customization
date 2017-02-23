@@ -12,7 +12,9 @@ Template.carsList.helpers({
 Template.carsList.events({
   'click .js-edit': function (e, tpl) {
     const carId = this._id;
-    FlowRouter.go(`/new/${carId}`);
+    if (!! carId) {
+      FlowRouter.go(`/new/${carId}`);
+    }
   },
   'click .js-remove': function (e, tpl) {
     const carId = this._id;

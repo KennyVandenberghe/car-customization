@@ -1,0 +1,19 @@
+$car-actions_padding   : 16px !default;
+$car-actions_text-align: right !default;
+$car-actions_border-top: 1px solid $color-divider !default;
+
+$car-actions-button_color: $color-icon-button !default;
+$car-actions-button-first-child_margin-right: 12px !default;
+
+
+.car-actions {
+  padding   : $car-actions_padding;
+  text-align: $car-actions_text-align;
+  border-top: $car-actions_border-top;
+  button {
+    color: $car-actions-button_color;
+  }
+  button:first-child {
+    margin-right: $car-actions-button-first-child_margin-right;
+  }
+}

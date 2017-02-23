@@ -18,10 +18,7 @@ Package.onUse(function(api) {
 
   api.use([
     'car-customizer-core',
-    'mongo',
-    'underscore',
-    'dburles:collection-helpers@1.0.2',
-    'sewdn:collection-behaviours@0.2.0'
+    'underscore'
   ], cs);
 
   api.use([

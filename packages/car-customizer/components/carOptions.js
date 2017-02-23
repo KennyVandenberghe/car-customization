@@ -5,27 +5,9 @@ const getCar = () => {
   return false;
 };
 
-const colors = [
-  '#F44336', 
-  '#E91E63', 
-  '#9C27B0', 
-  '#673AB7', 
-  '#3F51B5', 
-  '#2196F3', 
-  '#03A9F4', 
-  '#00BCD4', 
-  '#009688',
-  '#4CAF50',
-  '#8BC34A',
-  '#CDDC39',
-  '#FFEB3B',
-  '#FFC107',
-  '#FF9800',
-  '#FF5722',
-  '#795548',
-  '#9E9E9E',
-  '#607D8B'
-];
+const colors = Meteor.settings.public.CarCustomizer.Colors,
+      bodyTypes = Meteor.settings.public.CarCustomizer.Body.Types
+      wheelTypes = Meteor.settings.public.CarCustomizer.Wheels.Types;
 
 Template.carOptions.onCreated(function() {
   this.carBrands = new ReactiveVar();
@@ -37,7 +19,7 @@ Template.carOptions.onCreated(function() {
   this.bodyTypes = new carOptionBlocks({
     name: 'bodyTypes',
     action: 'body.update.type',
-    items: ['rectangle', 'parallelogram', 'oval'],
+    items: bodyTypes,
     selectedItem: this.data.car.body.type
   });
   this.bodyColors = new carOptionBlocks({
@@ -50,7 +32,7 @@ Template.carOptions.onCreated(function() {
   this.wheelTypes = new carOptionBlocks({
     name: 'wheelTypes',
     action: 'wheels.update.type',
-    items: ['circle', 'oval', 'square'],
+    items: wheelTypes,
     selectedItem: this.data.car.wheels.type
   });
   this.wheelColors = new carOptionBlocks({
@@ -68,7 +50,7 @@ Template.carOptions.helpers({
   },
   isSelected() {
     car = getCar();
-    return !! car && car.brand.make === this.make;
+    return !! car && car.brand.make === this.make ;
   },
   bodyTypeContext() {
     return {
@@ -93,15 +75,19 @@ Template.carOptions.helpers({
 });
 
 Template.carOptions.events({
-  'click .option-block': function (e, tpl) {
+  'click .option-block': (e, tpl) => {
     const carId = FlowRouter.getParam('carId'),
           $el = $(e.currentTarget),
           action = $el.data('action');
           name = $el.data('name');
-    Meteor.call(`carcustomizer.car.${action}`, carId, tpl[name].getSelectedItem());
+    if (!! carId && !! action && !! name) {
+      Meteor.call(`carcustomizer.car.${action}`, carId, tpl[name].getSelectedItem());
+    }
   },
   'click .brand-info': function (e, tpl) {
     const carId = FlowRouter.getParam('carId');
-    Meteor.call(`carcustomizer.car.update.brand`, carId, this);
+    if (!! carId) {
+      Meteor.call(`carcustomizer.car.update.brand`, carId, this);
+    }
   }
 });

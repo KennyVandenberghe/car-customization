@@ -17,7 +17,7 @@ Template.carCustomizer.helpers({
 });
 
 Template.carCustomizer.events({
-  'change #name': function (e, tpl) {
+  'change #name': (e, tpl) => {
     const carId = FlowRouter.getParam('carId'),
           name = $(e.currentTarget).val();
 

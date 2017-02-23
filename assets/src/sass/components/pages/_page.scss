@@ -1,0 +1,11 @@
+$page_max-width   : 1024px !default;
+$page_margin-left : auto !default;
+$page_margin-right: auto !default;
+$page_padding     : 24px 24px 0 24px !default;
+
+.page {
+  max-width   : $page_max-width;
+  margin-left : $page_margin-left;
+  margin-right: $page_margin-right;
+  padding     : $page_padding;
+}

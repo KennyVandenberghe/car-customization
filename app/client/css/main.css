@@ -2,6 +2,12 @@
   text-align: center;
   margin-bottom: 20px; }
 
+.page {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 24px 0 24px; }
+
 .page-splash .welcome {
   text-align: center;
   margin-bottom: 48px; }
@@ -15,8 +21,7 @@
 .car {
   max-width: 680px;
   height: 320px;
-  margin: auto;
-  margin-bottom: 24px;
+  margin: auto auto 24px auto;
   background-color: #ffffff;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -26,31 +31,31 @@
     text-align: center;
     font-size: 18px;
     font-weight: 200;
-    color: #999999; }
+    color: #bbbbbb; }
   .car .car-container {
     height: 200px;
     padding: 30px; }
     .car .car-container .car-preview {
-      margin-left: auto;
-      margin-right: auto;
       position: relative;
-      max-width: 400px; }
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto; }
       .car .car-container .car-preview__body {
         position: relative; }
         .car .car-container .car-preview__body .body-brand {
           position: absolute;
-          text-align: center;
-          z-index: 1;
           top: 16px;
           width: 100%;
-          height: 50px; }
+          height: 50px;
+          text-align: center;
+          z-index: 1; }
           .car .car-container .car-preview__body .body-brand img {
             height: 100%; }
       .car .car-container .car-preview__wheels {
         position: absolute;
+        bottom: -50%;
         width: 100%;
-        height: 100%;
-        bottom: -50%; }
+        height: 100%; }
         .car .car-container .car-preview__wheels > div {
           display: inline-block; }
         .car .car-container .car-preview__wheels > div:first-child {
@@ -59,14 +64,6 @@
         .car .car-container .car-preview__wheels > div:last-child {
           position: absolute;
           right: 20px; }
-  .car .car-actions {
-    border-top: 1px solid #eeeeee;
-    padding: 16px;
-    text-align: right; }
-    .car .car-actions button {
-      color: #999999; }
-    .car .car-actions button:first-child {
-      margin-right: 12px; }
 
 .car-options .car-name__title, .car-options .car-body__title, .car-options .car-wheels__title, .car-options .car-brands__title {
   color: #3F51B5;
@@ -76,8 +73,7 @@
 
 .car-options {
   max-width: 680px;
-  margin: auto;
-  margin-top: 16px; }
+  margin: auto 16px 16px 16px; }
   .car-options .car-name {
     margin-bottom: 24px; }
   .car-options .car-body {
@@ -116,18 +112,18 @@
           .car-options .car-brands .brands-container .brand-info {
             margin-bottom: 16px; } }
         .car-options .car-brands .brands-container .brand-info .selected-state {
+          position: absolute;
+          top: 10px;
+          right: 10px;
           width: 30px;
           height: 30px;
           background-color: #3F51B5;
-          border-radius: 50%;
-          position: absolute;
-          top: 10px;
-          right: 10px; }
+          border-radius: 50%; }
           .car-options .car-brands .brands-container .brand-info .selected-state i {
             position: absolute;
             top: calc(50% - 12px);
-            color: white;
-            left: calc(50% - 12px); }
+            left: calc(50% - 12px);
+            color: #ffffff; }
         .car-options .car-brands .brands-container .brand-info .brand-logo {
           margin-bottom: 10px; }
           .car-options .car-brands .brands-container .brand-info .brand-logo img {
@@ -135,6 +131,15 @@
         .car-options .car-brands .brands-container .brand-info .brand-name {
           font-size: 18px;
           font-weight: 300; }
+
+.car-actions {
+  padding: 16px;
+  text-align: right;
+  border-top: 1px solid #eeeeee; }
+  .car-actions button {
+    color: #bbbbbb; }
+  .car-actions button:first-child {
+    margin-right: 12px; }
 
 .car-preview__wheels .circle {
   width: 120px;
@@ -177,6 +182,10 @@
   -moz-transform: skew(30deg);
   -o-transform: skew(30deg);
   transform: skew(30deg); }
+  @media (max-width: 676px) {
+    .car-preview__body .parallelogram {
+      width: 90%;
+      margin: auto; } }
 
 .car-preview__body .oval {
   width: 100%;
@@ -230,9 +239,3 @@ html {
 body {
   background-color: #F5F5F5;
   color: #212121; }
-
-.page {
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 24px 24px 0 24px; }

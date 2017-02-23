@@ -1,67 +1,97 @@
+$car_max-width       : 680px !default;
+$car_height          : 320px !default;
+$car_margin          : auto auto 24px auto !default;
+$car_background-color: $color-white !default; 
+
+$car-name_margin_bottom: 24px !default;
+$car-name_text-align   : center !default;
+$car-name_font-size    : 18px !default;
+$car-name_font-weight  : 200 !default;
+$car-name_color        : $color-gray-dark !default;
+
+$car-container_height : 200px !default;
+$car-container_padding: 30px !default;
+
+$car-preview_position    : relative !default;
+$car-preview_max-width   : 400px !default;
+$car-preview_margin-left : auto !default;
+$car-preview_margin-right: auto !default;
+
+$car-body_position: relative !default;
+
+$car-body-brand_position  : absolute !default;
+$car-body-brand_top       : 16px !default;
+$car-body-brand_width     : 100% !default;
+$car-body-brand_height    : 50px !default;
+$car-body-brand_text-align: center !default;
+$car-body-brand_z-index   : 1 !default;
+
+$car-body-brand-img_height: 100% !default;
+
+$car-wheels_position: absolute !default;
+$car-wheels_bottom  : -50% !default;
+$car-wheels__width  : 100% !default;
+$car-wheels__height : 100% !default;
+$car-wheels_display : inline-block !default;
+
+$car-wheels-first_position: absolute !default;
+$car-wheels-first_left    : 20px !default;
+
+$car-wheels-second_position: absolute !default;
+$car-wheels-second_right   : 20px !default;
+
 .car {
-  max-width: 680px;
-  height: 320px;
-  margin: auto;
-  margin-bottom: 24px;
-  background-color: #ffffff;
+  max-width       : $car_max-width;
+  height          : $car_height;
+  margin          : $car_margin;
+  background-color: $car_background-color;
   @include shadow;
   .car-name {
-    margin-bottom: 24px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 200;
-    color: #999999;
+    margin-bottom: $car-name_margin_bottom;
+    text-align   : $car-name_text-align;
+    font-size    : $car-name_font-size;
+    font-weight  : $car-name_font-weight;
+    color        : $car-name_color;
   }
   .car-container {
-    height: 200px;
-    padding: 30px;
+    height : $car-container_height;
+    padding: $car-container_padding;
     .car-preview {
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      max-width: 400px;
+      position    : $car-preview_position;
+      max-width   : $car-preview_max-width;
+      margin-left : $car-preview_margin-left;
+      margin-right: $car-preview_margin-right;
       &__body {
-        position: relative;
+        position: $car-body_position;
         .body-brand {
-          position: absolute;
-          text-align: center;
-          z-index: 1;
-          top: 16px;
-          width: 100%;
-          height: 50px;
+          position  : $car-body-brand_position;
+          top       : $car-body-brand_top;
+          width     : $car-body-brand_width;
+          height    : $car-body-brand_height;
+          text-align: $car-body-brand_text-align;
+          z-index   : $car-body-brand_z-index;
           img {
-            height: 100%;
+            height: $car-body-brand-img_height;
           }
         }
       }
       &__wheels {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -50%;
+        position: $car-wheels_position;
+        bottom  : $car-wheels_bottom;
+        width   : $car-wheels__width;
+        height  : $car-wheels__height;
         > div {
-          display: inline-block;
+          display: $car-wheels_display;
         }
         > div:first-child {
-          position: absolute;
-          left: 20px;
+          position: $car-wheels-first_position;
+          left    : $car-wheels-first_left;
         }
         > div:last-child {
-          position: absolute;
-          right: 20px;
+          position: $car-wheels-second_position;
+          right   : $car-wheels-second_right;
         }
       }
-    }
-  }
-  .car-actions {
-    border-top: 1px solid #eeeeee;
-    padding: 16px;
-    text-align: right;
-    button {
-      color: #999999;
-    }
-    button:first-child {
-      margin-right: 12px;
     }
   }
 }
