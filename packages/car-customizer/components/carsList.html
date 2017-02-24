@@ -1,7 +1,19 @@
 <template name="carsList">
-  {{#each cars}}
-    {{> carPreview car=this options=true}}
-  {{/each}}
+  {{#unless cars}}
+    <div class="no-cars">
+      <p>You don't have any cars yet</p>
+      <p>Start by creating a new car</p>
+    </div>
+    <div class="button-container">
+      <button class="new-car mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Create new car
+      </button>
+    </div>
+  {{else}}
+    {{#each cars}}
+      {{> carPreview car=this options=true}}
+    {{/each}}
+  {{/unless}}
 </template>
 
 <template name="carPreview">

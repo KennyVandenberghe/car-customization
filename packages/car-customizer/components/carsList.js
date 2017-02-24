@@ -4,7 +4,7 @@ Template.carsList.helpers({
     if (!! cars && cars.length > 0) {
       return cars
     } else {
-      FlowRouter.go('/');
+      return false;
     }
   }
 });
@@ -21,5 +21,12 @@ Template.carsList.events({
     if (!! carId) {
       Meteor.call('carcustomizer.car.remove', carId);
     }
+  },
+  'click .new-car': () => {
+    Meteor.call('carcustomizer.car.create', (err, res) => {
+      if (! err) {
+        FlowRouter.go(`/new/${res}`);
+      }
+    });
   }
 });

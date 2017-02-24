@@ -18,6 +18,15 @@
     font-size: 18px;
     font-weight: 200; }
 
+.no-cars {
+  text-align: center; }
+  .no-cars p:first-child {
+    font-size: 24px;
+    font-weight: 200; }
+  .no-cars p:last-child {
+    font-size: 18px;
+    font-weight: 200; }
+
 .car {
   max-width: 680px;
   height: 320px;

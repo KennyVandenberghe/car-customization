@@ -1,3 +1,9 @@
+$no-cars-title_text-align : center !default;
+$no-cars-title_font-size  : 24px !default;
+$no-cars-title_font-weight: 200 !default;  
+$no-cars-sub_font-size    : 18px !default;
+$no-cars-sub_font-weight  : 200 !default;  
+
 $car_max-width       : 680px !default;
 $car_height          : 320px !default;
 $car_margin          : auto auto 24px auto !default;
@@ -39,6 +45,18 @@ $car-wheels-first_left    : 20px !default;
 
 $car-wheels-second_position: absolute !default;
 $car-wheels-second_right   : 20px !default;
+
+.no-cars {
+  text-align: $no-cars-title_text-align;
+  p:first-child {
+    font-size  : $no-cars-title_font-size;
+    font-weight: $no-cars-title_font-weight;  
+  }
+  p:last-child {
+    font-size  : $no-cars-sub_font-size;
+    font-weight: $no-cars-sub_font-weight;  
+  }
+}
 
 .car {
   max-width       : $car_max-width;
