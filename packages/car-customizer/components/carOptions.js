@@ -50,7 +50,9 @@ Template.carOptions.helpers({
   },
   isSelected() {
     car = getCar();
-    return !! car && car.brand.make === this.make ;
+    if (!! car && !! car.brand && !! car.brand.make) {
+      return !! car && car.brand.make === this.make ;
+    }
   },
   bodyTypeContext() {
     return {
